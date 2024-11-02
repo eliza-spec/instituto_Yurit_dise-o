@@ -1,0 +1,38 @@
+   .promo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px; /* Espaciado entre las tarjetas */
+        }
+
+        .promo-card {
+            perspective: 1000px; /* Para la animación 3D */
+        }
+
+        .promo-front, .promo-back {
+            width: 200px; /* Ancho fijo de las tarjetas */
+            height: 200px; /* Alto fijo de las tarjetas */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ccc; /* Bordes de las tarjetas */
+            border-radius: 10px; /* Esquinas redondeadas */
+            overflow: hidden; /* Para recortar las imágenes que sobresalgan */
+            position: relative; /* Necesario para el efecto de animación */
+            transition: transform 0.6s; /* Animación al girar */
+        }
+
+        .promo-card:hover .promo-front {
+            transform: rotateY(180deg); /* Gira la tarjeta al pasar el mouse */
+        }
+
+        .promo-card:hover .promo-back {
+            transform: rotateY(0deg); /* Muestra la parte posterior al pasar el mouse */
+            background-color: #f4f4f4;
+        }
+
+        .promo-front img {
+            width: 100%; /* Hace que la imagen se ajuste al ancho del contenedor */
+            height: 100%; /* Hace que la imagen se ajuste al alto del contenedor */
+            object-fit: cover; /* Cubre el área del contenedor manteniendo la relación de aspecto */
+        }

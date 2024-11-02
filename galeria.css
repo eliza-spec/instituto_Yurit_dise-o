@@ -1,0 +1,50 @@
+/* Galería de Promo con efecto de voltear */
+        .promo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .promo-item {
+            perspective: 1000px;
+        }
+
+        .promo-card {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            transform-style: preserve-3d;
+            transition: transform 0.8s ease-out; /* Transición más suave */
+        }
+
+        .promo-card:hover {
+            transform: rotateY(180deg);
+        }
+
+        .promo-front, .promo-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+        }
+
+        .promo-front {
+            background-color: #4a90e2;
+        }
+
+        .promo-back {
+            background-color: #007bff;
+            transform: rotateY(180deg);
+            font-style: italic;
+            color: #fff;
+        }
